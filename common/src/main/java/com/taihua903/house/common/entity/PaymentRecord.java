@@ -5,7 +5,11 @@ import java.util.Date;
 public class PaymentRecord {
     private Integer id;
 
+    private String requestId;
+
     private String paymentName;
+
+    private Date paymentTime;
 
     private Long paymentAmount;
 
@@ -15,9 +19,11 @@ public class PaymentRecord {
 
     private Date updateTime;
 
-    public PaymentRecord(Integer id, String paymentName, Long paymentAmount, String goodsName, Date createTime, Date updateTime) {
+    public PaymentRecord(Integer id, String requestId, String paymentName, Date paymentTime, Long paymentAmount, String goodsName, Date createTime, Date updateTime) {
         this.id = id;
+        this.requestId = requestId;
         this.paymentName = paymentName;
+        this.paymentTime = paymentTime;
         this.paymentAmount = paymentAmount;
         this.goodsName = goodsName;
         this.createTime = createTime;
@@ -36,12 +42,28 @@ public class PaymentRecord {
         this.id = id;
     }
 
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId == null ? null : requestId.trim();
+    }
+
     public String getPaymentName() {
         return paymentName;
     }
 
     public void setPaymentName(String paymentName) {
         this.paymentName = paymentName == null ? null : paymentName.trim();
+    }
+
+    public Date getPaymentTime() {
+        return paymentTime;
+    }
+
+    public void setPaymentTime(Date paymentTime) {
+        this.paymentTime = paymentTime;
     }
 
     public Long getPaymentAmount() {
