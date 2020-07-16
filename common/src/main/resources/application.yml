@@ -1,0 +1,20 @@
+server:
+  port: 8888
+  mybatis:
+#    config-location: classpath:mybatis/mybatis.cfg.xml #mybatis 配置文件路径
+#    type-aliases-package: com.taihua903.house.common.entity # entity别名类所在包
+#    mapper-locations: mybatis/mapper/*.xml    # mapper映射文件
+  spring:
+    application:
+      name: taihua903-house-common #这个很重要，这在以后的服务与服务之间相互调用一般都是根据这个name
+    datasource:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/test?serverTimezone=GMT%2B8
+      password: root
+      username: root
+      dbcp2:
+        min-idle: 5                         # 数据库连接池的最小维持连接数
+        initial-size: 5                     # 初始化连接数
+        max-total: 5                        # 最大连接数
+        max-wait-millis: 150                # 等待连接获取的最大超时时间
